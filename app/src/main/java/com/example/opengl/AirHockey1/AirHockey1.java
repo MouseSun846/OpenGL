@@ -27,6 +27,7 @@ import static android.opengl.GLES20.glGetUniformLocation;
 import static android.opengl.GLES20.glUniform4f;
 import static android.opengl.GLES20.glUseProgram;
 import static android.opengl.GLES20.glVertexAttribPointer;
+import static android.opengl.GLES20.glViewport;
 
 public class AirHockey1 implements GLSurfaceView.Renderer {
     private static final String U_COLOR = "u_Color";
@@ -84,6 +85,8 @@ public class AirHockey1 implements GLSurfaceView.Renderer {
         uColorLocation = glGetUniformLocation(program,U_COLOR);
         //获取属性的位置
         aPositionLocation = glGetAttribLocation(program,A_POSITION);
+        //设置视图窗口
+        glViewport(100,100,1000,1000);
         //关联属性到顶点数据的数组
         //从数据开头处读取
         vertexData.position(0);

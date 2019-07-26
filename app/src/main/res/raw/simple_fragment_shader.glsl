@@ -3,8 +3,9 @@
 //这些数据在运行中显然是不需要被改变的.
 //定义默认精度 lowp mediump highp
 precision mediump float;
-uniform vec4 u_Color;
+//颜色混合
+varying vec4 v_Color;
 void main(){
     //赋值 到指定输出变量
-    gl_FragColor = u_Color;
+    gl_FragColor = v_Color;
 }
