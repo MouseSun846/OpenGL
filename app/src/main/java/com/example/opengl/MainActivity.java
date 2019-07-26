@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.opengl.AirHockey1.AirHockey1;
 import com.example.opengl.AirHockey2.AirHockey2;
+import com.example.opengl.AirHockey3.AirHockey3;
 
 public class MainActivity extends AppCompatActivity {
     private GLSurfaceView glSurfaceView;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //            glSurfaceView.setEGLConfigChooser(8,8,8,8,16,1);
 //            glSurfaceView.setRenderer(new FirstOpenGLProjectRender());
             //实现render接口方法，渲染类
-            glSurfaceView.setRenderer(new AirHockey2(this));
+            glSurfaceView.setRenderer(new AirHockey3(this));
             rendererSet = true;
             Toast.makeText(MainActivity.this,"支持OpenGLES2.0",Toast.LENGTH_LONG).show();
         }else {

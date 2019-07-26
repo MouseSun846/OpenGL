@@ -98,4 +98,17 @@ public class ShapeHelper {
         Log.v("mouse","Results of validate program: "+validateStatus[0] + "\nlog:" + glGetProgramInfoLog(programObjectId));
         return validateStatus[0] != 0;
     }
+    public static int buildProgram(String vertexShaderSource,String fragmentShaderSource){
+        int program;
+        //编译
+        int vertexShader = compileVertexShader(vertexShaderSource);
+        int fragmentShader = compileFragmentShader(fragmentShaderSource);
+        //连接
+        program = linkProgram(vertexShader,fragmentShader);
+        if (LoggerConfig.ON){
+            validateProgram(program);
+        }
+        return program;
+    }
+
 }
