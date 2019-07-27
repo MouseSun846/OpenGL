@@ -58,6 +58,5 @@ public class TextureHelper {
         glBindTexture(GL_TEXTURE_2D,0);
         //返回纹理对象
         return textureObjectIds[0];
-
     }
 }
