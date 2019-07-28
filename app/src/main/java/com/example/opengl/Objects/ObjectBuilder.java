@@ -33,13 +33,15 @@ public class ObjectBuilder {
     }
     //计算圆柱体顶点数量
     public static int sizeOfCircleInVertices(int numPoints){
+        //由三角形扇构成 有一个顶点在圆心 围绕圆的第一个顶点需要重合两次才能使圆闭合
         return 1 + (numPoints + 1);
     }
     //计算圆柱体侧面顶点数量
     private static int sizeOfOpenCylinderInVertices(int numPoints){
+        //由三角形带构成 有一个顶点在圆心 围着顶部圆的每个点都需要两个顶点，并且前两个顶点需要重复两次才能使闭合
         return (numPoints + 1) * 2;
     }
-    //用圆柱体创建冰球
+    //用圆柱体创建冰球--桌子中间扁平的圆柱体
     static GeneratedData createPuck(Geometry.Cylinder puck,int numPoints){
         //所有顶点数目
         int size = sizeOfCircleInVertices(numPoints)+sizeOfOpenCylinderInVertices(numPoints);
